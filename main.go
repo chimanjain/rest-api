@@ -22,12 +22,11 @@ func main() {
 	v1 := r.Group("/v1")
 
 	// Routes
-	rental := v1.Group("/rental")
-	rental.GET("", controller.FindRentals)
-	rental.GET("/:id", controller.FindRental)
-	rental.POST("", controller.CreateRental)
-	rental.PATCH("/:id", controller.UpdateRental)
-	rental.DELETE("/:id", controller.DeleteRental)
+	v1.GET("/rental", controller.FindRentals)
+	v1.GET("/rental/:id", controller.FindRental)
+	v1.POST("/rental", controller.CreateRental)
+	v1.PATCH("/rental/:id", controller.UpdateRental)
+	v1.DELETE("/rental/:id", controller.DeleteRental)
 
 	// Run the server
 	r.Run(":3000")
