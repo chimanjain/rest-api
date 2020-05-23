@@ -13,7 +13,6 @@ type CreateRentalInput struct {
 	OwnerName string `json:"ownerName" binding:"required"`
 	Location string `json:"location" binding:"required"`
 	Price string `json:"price" binding:"required"`
-	DateCreated string `json:"dateCreated" binding:"required"`
 }
 
 type UpdateRentalInput struct {
