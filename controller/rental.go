@@ -39,7 +39,7 @@ func FindRentals(c *gin.Context) {
 func FindRental(c *gin.Context) {
 	db := c.MustGet("db").(*gorm.DB)
 
-	// Get model if exist
+	// Get model
 	var rental model.Rental
 	if err := db.Where("id = ?", c.Param("id")).First(&rental).Error; err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Record not found!"})

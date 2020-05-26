@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-
 func main() {
 	r := gin.Default()
 
@@ -20,7 +19,7 @@ func main() {
 		c.Next()
 	})
 
-	routes.InitializeRoutes(r)
+	routes.InitializeRentalRoutes(r)
 
 	// Run the server
 	r.Run(":3000")

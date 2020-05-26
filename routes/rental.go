@@ -1,12 +1,13 @@
 package routes
 
 import (
-	"github.com/gin-gonic/gin"
 	"rest-api/controller"
+
+	"github.com/gin-gonic/gin"
 )
 
-
-func InitializeRoutes(r *gin.Engine) {
+// InitializeRentalRoutes initializes the routes for rental api
+func InitializeRentalRoutes(r *gin.Engine) {
 
 	// Handle the index route
 	v1 := r.Group("/v1")
