@@ -1,4 +1,4 @@
-package routes
+package router
 
 import (
 	"rest-api/controller"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// InitializeRentalRoutes initializes the routes for rental api
+// InitializeRentalRoutes initializes the router for rental api
 func InitializeRentalRoutes(r *gin.Engine) {
 
 	// Handle the index route

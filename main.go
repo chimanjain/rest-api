@@ -2,7 +2,7 @@ package main
 
 import (
 	"rest-api/model"
-	"rest-api/routes"
+	"rest-api/router"
 
 	"github.com/gin-gonic/gin"
 )
@@ -19,7 +19,7 @@ func main() {
 		c.Next()
 	})
 
-	routes.InitializeRentalRoutes(r)
+	router.InitializeRentalRoutes(r)
 
 	// Run the server
 	r.Run(":3000")
