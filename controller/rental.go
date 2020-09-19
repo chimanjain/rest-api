@@ -1,25 +1,26 @@
 package controller
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
 	"net/http"
 	"rest-api/model"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
 type CreateRentalInput struct {
-	Name  string `json:"name" binding:"required"`
+	Name      string `json:"name" binding:"required"`
 	OwnerName string `json:"ownerName" binding:"required"`
-	Location string `json:"location" binding:"required"`
-	Price string `json:"price" binding:"required"`
+	Location  string `json:"location" binding:"required"`
+	Price     string `json:"price" binding:"required"`
 }
 
 type UpdateRentalInput struct {
-	Name  string `json:"name"`
-	OwnerName string `json:"ownerName"`
-	Location string `json:"location"`
-	Price string `json:"price"`
+	Name        string `json:"name"`
+	OwnerName   string `json:"ownerName"`
+	Location    string `json:"location"`
+	Price       string `json:"price"`
 	DateCreated string `json:"dateCreated"`
 }
 
@@ -63,10 +64,10 @@ func CreateRental(c *gin.Context) {
 
 	// Create Rental
 	rental := model.Rental{
-		Name: input.Name,
-		OwnerName: input.OwnerName,
-		Location: input.Location,
-		Price: input.Price,
+		Name:        input.Name,
+		OwnerName:   input.OwnerName,
+		Location:    input.Location,
+		Price:       input.Price,
 		DateCreated: time.Now().UTC().String(),
 	}
 	db.Create(&rental)
