@@ -6,7 +6,10 @@ import (
 )
 
 func SetupModels() *gorm.DB {
-	dsn := "root:password@tcp(localhost)/test?charset=utf8mb4&parseTime=True&loc=Local"
+	dbUser := "root"
+	dbPassword := "password"
+	dbName := "test"
+	dsn := dbUser + ":" + dbPassword + "@tcp(localhost)/" + dbName + "?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 
 	if err != nil {
