@@ -22,5 +22,5 @@ func main() {
 	router.InitializeRentalRoutes(r)
 
 	// Run the server
-	r.Run(":3000")
+	_ = r.Run(":3000")
 }

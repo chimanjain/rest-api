@@ -8,7 +8,6 @@ import (
 
 // InitializeRentalRoutes initializes the router for rental api
 func InitializeRentalRoutes(r *gin.Engine) {
-
 	// Handle the index route
 	v1 := r.Group("/v1")
 

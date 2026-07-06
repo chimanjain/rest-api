@@ -2,8 +2,9 @@ package controller
 
 import (
 	"net/http"
-	"rest-api/model"
 	"time"
+
+	"rest-api/model"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
